@@ -10,11 +10,11 @@ library(dplyr)
 koneksi_db <- function() {
   dbConnect(
     Postgres(),
-    dbname = Sys.getenv("DB_NAME", "db_pentaho"),
-    host = Sys.getenv("DB_HOST", "host.docker.internal"),  
-    port = as.integer(Sys.getenv("DB_PORT", 5432)),
-    user = Sys.getenv("DB_USER", "postgres"),
-    password = Sys.getenv("DB_PASSWORD", "postgres")
+    dbname = Sys.getenv("DB_NAME"),
+    host = Sys.getenv("DB_HOST"),  
+    port = as.integer(Sys.getenv("DB_PORT")),
+    user = Sys.getenv("DB_USER"),
+    password = Sys.getenv("DB_PASSWORD")
   )
 }
 
