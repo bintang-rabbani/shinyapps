@@ -10,11 +10,11 @@ library(dplyr)
 koneksi_db <- function() {
   dbConnect(
     Postgres(),
-    dbname = Sys.getenv("DB_NAME"),
-    host = Sys.getenv("DB_HOST"),  
-    port = as.integer(Sys.getenv("DB_PORT")),
-    user = Sys.getenv("DB_USER"),
-    password = Sys.getenv("DB_PASSWORD")
+    dbname = Sys.getenv("DB_NAME", "railway"),
+    host = Sys.getenv("DB_HOST", "mainline.proxy.rlwy.net"),  
+    port = as.integer(Sys.getenv("DB_PORT", "11343")),
+    user = Sys.getenv("DB_USER", "postgres"),
+    password = Sys.getenv("DB_PASSWORD", "dDrqFlpSPYcWGZhHKESsQEjwvTYdZJym")
   )
 }
 
